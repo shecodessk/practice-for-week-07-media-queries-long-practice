@@ -1,26 +1,90 @@
 .photo-card {
-    background-color: #1d3e81;
-    color: #E8EFF0;
-    padding: 0.5rem 2rem 1.5rem 2rem;
-    border-radius: 2rem;
-    margin: 0 0 10px 0;
-    text-align: center;
+  background-color: #1d3e81;
+  color: #e8eff0;
+  padding: 0.5rem 2rem 1.5rem 2rem;
+  border-radius: 2rem;
+  margin: 0 0 10px 0;
+  text-align: center;
 }
 
 .photo-card a {
-    color: #E8EFF0;
+  color: #e8eff0;
 }
 .photo-card img {
-    width: 100%;
+  width: 100%;
 }
 
 .photo-card p {
-    text-align: justify;
+  text-align: justify;
 }
 
 .photo-card .content {
-    display: block;
-    text-align: center;
+  display: block;
+  text-align: center;
 }
 
 /* Your code here */
+
+@media (min-width: 1025px) {
+  .photo-card a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+/*browser width
+narrowest to widest:*/
+
+/*narrow*/
+
+/*moderate*/
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .photo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .photo-card .content {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+/*Wider*/
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .photo-card {
+    width: 50%;
+    display: inline-block;
+  }
+}
+/*Widest*/
+@media screen and (min-width: 1201px) {
+  .photo-card {
+    display: inline-block;
+    width: 42%;
+    text-align: left;
+  }
+  .photo-card .content {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+@media print {
+  .photo-card .content {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .photo-card {
+    break-inside: avoid;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+}
